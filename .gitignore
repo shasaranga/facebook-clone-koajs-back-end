@@ -1,0 +1,10 @@
+node_modules/
+
+/src/firebase-admin-fb-clone.json
+
+
+.vscode-test
+
+npm-debug.log*
+
+.env
