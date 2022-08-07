@@ -1,5 +1,6 @@
 const { storage } = require("../config/firebaseConfig");
 const fs = require("fs");
+const _ = require('lodash')
 
 const { Posts, User } = require("../models");
 
@@ -49,7 +50,7 @@ const addPost = async (ctx, next) => {
     userId,
   });
 
-  if (ctx.request.files) {
+  if (!_.isEmpty(ctx.request.files )) {
     let fileName = "default";
     let file = null;
     if (ctx.request.files.uploadedImage) {
